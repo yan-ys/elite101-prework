@@ -1,7 +1,15 @@
 print("Welcome to taxi chatbot")
 name = input('Enter your name: ')
-age = input('Enter your age: ')
+try:
+    age = int(input('Enter your age: '))
+    if age < 13:
+        choice = '4'
+        print('You need to be at least 13 to use the taxi chatbot.\n Ending conversation...')
+except:
+    print('Please enter a valid age...restarting chatbot')
+    choice = '4'
 choice = None
+
 
 while choice != '4':
     print(f'\nHi, {name} how can I help you?')
